@@ -11,12 +11,21 @@
     <title>To Do List</title>
   </head>
   <body>
-    <h1>Electrical Task Tracker</h1>
+    <h1>Task Tracker</h1>
     <div class="container">
       <label for="taskInput">Log a maintenance task:</label>
       <input type="text" id="taskInput" placeholder="e.g., replace socket..." />
+      <label for="taskDueDate">Due Date:</label>
+      <input type="date" id="taskDueDate" placeholder="due date"/>
+      <label for="priority">Priority</label>
+      <select name="priority" id="prioritySelect">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
       <button id="logTaskBtn">Log Task</button>
       <ul id="taskList"></ul>
+      <div id="counter">Total: 0 | Completed: 0</div>
     </div>
     <script src="public/script.js"></script>
   </body>
