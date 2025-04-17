@@ -44,3 +44,51 @@ function updateCounter() {
   const completed = document.querySelectorAll('.task-text.done').length;
   document.getElementById('counter').innerText = `Total: ${total} | Completed: ${completed}`;
 }
+
+// Save tasks to localStorage
+function saveTasks() {
+  const tasks = Array.from(document.querySelectorAll('.task-text')).map(task => ({
+    text: task.innerText.replace('🔧 ', ''),
+    done: task.classList.contains('done')
+  }));
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+// Load tasks from localStorage
+function loadTasks() {
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  tasks.forEach(taskData => {
+    const task = document.createElement('li');
+    task.classList.add('task-item');
+
+    const span = document.createElement('span');
+    span.innerText = `🔧 ${taskData.text}`;
+    span.classList.add('task-text');
+    if (taskData.done) span.classList.add('done');
+    task.appendChild(span);
+
+    const statusBtn = document.createElement('button');
+    statusBtn.innerText = taskData.done ? 'Mark Incomplete' : 'Mark Done';
+    statusBtn.classList.add('status-btn');
+    statusBtn.addEventListener('click', () => {
+      span.classList.toggle('done');
+      statusBtn.innerText = span.classList.contains('done') ? 'Mark Incomplete' : 'Mark Done';
+      saveTasks();
+    });
+    task.appendChild(statusBtn);
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerText = '❌';
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.addEventListener('click', () => {
+      task.remove();
+      saveTasks();
+    });
+    task.appendChild(deleteBtn);
+
+    document.getElementById('taskList').appendChild(task);
+  });
+}
+
+// Call this at page load
+loadTasks();
