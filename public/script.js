@@ -19,6 +19,7 @@ document.getElementById('logTaskBtn').addEventListener('click', () => {
     statusBtn.addEventListener('click', () => {
       span.classList.toggle('done');
       statusBtn.innerText = span.classList.contains('done') ? 'Mark Incomplete' : 'Mark Done';
+      updateCounter();
     });
     task.appendChild(statusBtn);
 
@@ -28,11 +29,13 @@ document.getElementById('logTaskBtn').addEventListener('click', () => {
     deleteBtn.classList.add('delete-btn');
     deleteBtn.addEventListener('click', () => {
       task.remove();
+      updateCounter();
     });
     task.appendChild(deleteBtn);
 
     document.getElementById('taskList').appendChild(task);
     input.value = '';
+    updateCounter();
   } else {
     alert('Please enter a task.');
   }
@@ -92,3 +95,32 @@ function loadTasks() {
 
 // Call this at page load
 loadTasks();
+
+// Filtering Tasks - show all, incomplete, complete
+
+const taskList = document.getElementById('taskList');
+
+// Function to filter tasks
+function filterTasks(filterType) {
+  const tasks = taskList.querySelectorAll('li');
+
+  tasks.forEach(task => {
+    const isDone = task.querySelector('.task-text').classList.contains('done');
+
+    if (filterType === 'all') {
+      task.style.display = 'flex'; // or 'block' if your tasks are block elements
+    } else if (filterType === 'completed' && isDone) {
+      task.style.display = 'flex';
+    } else if (filterType === 'incomplete' && !isDone) {
+      task.style.display = 'flex';
+    } else {
+      task.style.display = 'none';
+    }
+  });
+}
+
+// filter button events
+document.getElementById('showAllBtn').addEventListener('click', () => filterTasks('all'));
+document.getElementById('showCompletedBtn').addEventListener('click', () => filterTasks('completed'));
+document.getElementById('showIncompleteBtn').addEventListener('click', () => filterTasks('incomplete'));
+
