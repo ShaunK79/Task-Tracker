@@ -45,6 +45,14 @@ function createTaskElement(task) {
         updateCounter();
     };
 
+    // const removeButton = document.createElement('button');
+    // removeButton.innerText = 'Remove';
+    // removeButton.onclick = function () {
+    //     task.status = 'Removed';
+    //     saveTasks();
+    //     updateCounter();
+    // }
+
     li.appendChild(taskName);
     li.appendChild(details);
     li.appendChild(startButton);
