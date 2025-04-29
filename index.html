@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Task Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Task Tracker</h1>
+
+  <form id="task-form">
+    <input type="text" id="task-name" placeholder="Task Name" required>
+    <select id="job-type">
+      <option value="Electrical">Electrical</option>
+      <option value="Mechanical">Mechanical</option>
+      <option value="Painting">Painting & Decorating</option>
+      <option value="Joinery">Joinery</option>
+      <option value="Landscape">Landscape</option>
+    </select>
+    <select id="priority">
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low">Low</option>
+    </select>
+    <input type="date" id="due-date" required>
+    <input type="text" id="assigned-to" placeholder="Assigned To" required>
+    <button type="submit">Add Task</button>
+  </form>
+
+  <div id="counter">Total: 0 | In Progress: 0 | Completed: 0</div>
+
+  <ul id="task-list"></ul>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
