@@ -1,52 +1,76 @@
-⚡Task Tracker
-A simple, lightweight web application for personnel to track tasks and maintenance activities.
-📋 Overview
-Task Tracker is a browser-based tool that allows users to log, track, and manage reactive or maintenance tasks. The application provides a clean interface for adding new tasks, marking them as complete or incomplete, and removing tasks when they're no longer needed.
-✨ Features
+Simple Task Tracker
 
-Task Logging: Easily add new reactive or maintenance tasks
-Status Tracking: Toggle tasks between "done" and "incomplete" states
-Task Removal: Delete tasks that are no longer needed
-Visual Indicators: Tasks marked as complete are visually distinguished with a strikethrough
-Responsive Design: Works on desktop and mobile devices
+The Simple Task Tracker is a lightweight, browser-based tool designed to help individuals or small teams manage and monitor daily tasks efficiently. It allows users to add tasks with key details, track progress status and see summary counters for total, in-progress, and completed jobs—all within a clean, intuitive interface.
 
-🚀 Getting Started
-Prerequisites
-No special prerequisites are required. The application runs in any modern web browser.
-Installation
+🔧 Features
+Add tasks with:
 
-Clone or download this repository
-Open index.html in your web browser
+ - Task name
 
-That's it! No server setup or additional dependencies are required.
-🔧 How to Use
+ - Job type (e.g., Electrical, Mechanical, etc.)
 
-Type a new reactive or maintenance task in the input field (e.g., "Replace socket in room 203")
-Click "Log Task" or press Enter to add the task to your list
-Use the "Mark Done" button to toggle the completion status of a task
-Click the ❌ button to remove a task from the list
+ - Priority (High, Medium, Low)
 
-🔍 Project Structure
+ - Due date
 
-index.html - The main HTML structure of the application
-style.css - CSS styling for the interface
-script.js - JavaScript for handling task creation, status updates, and deletion
+ - Assigned person
 
-🛠️ Technologies Used
+Track task status as:
 
-HTML5
-CSS3
-Vanilla JavaScript (No frameworks or libraries)
+ - Not Started (default)
 
-📱 Browser Compatibility
-This application is compatible with all modern web browsers including:
+ - In Progress
 
-Chrome
-Firefox
-Safari
-Edge
+ - Completed
 
-📝 License
-This project is open source and available for personal or commercial use.
-👥 Contributing
-Feel free to fork this project and submit pull requests with enhancements or bug fixes.
+Dynamic task counter display:
+
+ - Total tasks
+
+ - Tasks in progress
+
+ - Completed tasks
+
+Tasks are stored in localStorage to persist data across sessions
+
+Responsive and user-friendly design
+
+🧑‍💻 Technologies Used
+ - HTML5 – For page structure
+
+ - CSS3 – For basic styling
+
+ - JavaScript (Vanilla) – For all interactivity and logic
+
+ - LocalStorage API – To save and retrieve task data
+
+🚀 How to Use
+1. Open the index.html file in your web browser.
+
+2. Fill in the task details in the form and click "Add Task".
+
+3. Use the "Start" and "Complete" buttons to update the task status.
+
+4. View task summary in the counter above the task list.
+
+5. Refresh or close the browser—your tasks will be saved automatically!
+
+📁 File Structure
+
+/task-tracker
+│
+├── index.html       # Main HTML page
+├── styles.css       # Styling for layout and task items
+└── script.js        # JavaScript functionality
+
+
+📌 Future Improvements (Suggestions)
+ - Add task deletion and editing
+
+ - Filter tasks by status or priority
+
+ - Sort by due date or job type
+
+ - Add confirmation pop-ups for actions
+
+ - Mobile-responsive enhancements
