@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
+  <!-- compatible with all browsers and responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
   <title>Simple Task Tracker</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,7 +13,7 @@
   <h1>Task Tracker</h1>
 
   <form id="task-form">
-    <input type="text" id="task-name" placeholder="Task Name" required>
+    <input type="text" id="task-name" placeholder="Task Name" required/>
     <select id="job-type">
       <option value="Electrical">Electrical</option>
       <option value="Mechanical">Mechanical</option>
@@ -24,8 +26,8 @@
       <option value="Medium">Medium</option>
       <option value="Low">Low</option>
     </select>
-    <input type="date" id="due-date" required>
-    <input type="text" id="assigned-to" placeholder="Assigned To" required>
+    <input type="date" id="due-date" required />
+    <input type="text" id="assigned-to" placeholder="Assigned To" required />
     <button type="submit">Add Task</button>
   </form>
 
