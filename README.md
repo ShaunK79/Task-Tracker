@@ -6,6 +6,8 @@ A simple and responsive task tracking app built with HTML, CSS, and JavaScript. 
 
 - Add new tasks with a click
 - Mark tasks as completed
+- Delete and Pause buttons
+- Notes section for user to make notes
 - Stores tasks in browser using localStorage
 - Responsive and user-friendly interface
 
@@ -31,9 +33,9 @@ Task-Tracker/ ├── index.html ├── style.css ├── script.js └�
 
 Future Improvements
 
-Add a 'delete' button to remove task when finished
+Add a 'delete' button to remove task when finished UPDATE - this has been added and functional
 
-Add task categories or priority levels
+Add task categories or priority levels - UPDATE there is RED, YELLOW, GREEN for priorities
 
 Enable due dates and reminders
 
