@@ -1,44 +1,107 @@
+/* Reset default spacing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background: #f0f8ff;
+    background-color: #f9f9f9;
+    align-items: center;
 }
 
 form {
+    max-width: 600px;
     margin-bottom: 20px;
+}
+
+input,
+select,
+textarea,
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#counter {
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 #task-list {
     list-style: none;
-    padding: 0;
+    max-width: 600px;
 }
 
 .task-item {
-    background: white;
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
     margin-bottom: 10px;
-    padding: 10px;
-    border-left: 5px solid #ccc;
-    animation: fadeIn 0.5s ease-in;
+}
+
+.task-item textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    resize: vertical;
+}
+
+.task-item p,
+.task-item div,
+.task-item strong {
+    margin-bottom: 5px;
+}
+
+.task-item button {
+    margin-right: 5px;
+    margin-top: 5px;
 }
 
 .priority-High {
-    border-color: red;
+    border-left: 6px solid red;
 }
 
 .priority-Medium {
-    border-color: orange;
+    border-left: 6px solid orange;
 }
 
 .priority-Low {
-    border-color: green;
+    border-left: 6px solid green;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
     }
 
-    to {
-        opacity: 1;
+    input,
+    select,
+    textarea,
+    button {
+        font-size: 1rem;
     }
 }
